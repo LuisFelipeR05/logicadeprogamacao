@@ -1,6 +1,6 @@
-FRUTAS = ["Uva", "Goiaba", "Banana", "Morango", "Pera", "Laranja"]
+frutas = ['Uva', 'Goiaba', 'Banana', 'Morango', 'Pera', 'Laranja']
 
-frutas_tupla  = tuple(frutas)
+tupla_frutas = tuple(frutas)
 
 print('frutas armazenadas na tupla:')
 
