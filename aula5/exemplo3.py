@@ -68,6 +68,3 @@ while True:
     elif opção == "7":
         print("Saindo do sistema...")
         break
-
-        
-            
