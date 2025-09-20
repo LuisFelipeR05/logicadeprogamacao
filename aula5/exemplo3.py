@@ -24,7 +24,6 @@ while True:
 
         usuariso.append([nome,email,telefone])
 
-
         print("Usuario cadastrado com sucesso!")
 
     elif opção == "2":
@@ -35,7 +34,6 @@ while True:
             novo_nome = input("Digite o novo nome: ")
             
             usuariso[indice] = novo_nome
-        
             print("Usuário atualizado com sucesso!")
         
         else:
@@ -52,8 +50,6 @@ while True:
         if 0 <= indice < len(usuariso):
             novo_nome = input("Digite o novo nome: ")
             usuariso[indice] = novo_nome
-
-        
             print("Usuário atualizado com sucesso!")
         
         else:
@@ -77,8 +73,6 @@ while True:
         print("usuario sorteado")
         escolha = random.choice(usuariso)
         print(f"usuario sorteado {escolha} ")
-
-
 
     elif opção == "8":
         print("Saindo do sistema...")
