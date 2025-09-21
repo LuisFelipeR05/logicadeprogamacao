@@ -1,6 +1,6 @@
 # Fazer um algoritimo em loop infinito
 import random
-usuariso = []
+usuario = []
 
 while True:
     print("=" *30)
@@ -22,56 +22,56 @@ while True:
         email = input("digite um novo email")
         telefone = input("digite um novo telefone")
 
-        usuariso.append([nome,email,telefone])
+        usuario.append([nome,email,telefone])
 
         print("Usuario cadastrado com sucesso!")
 
     elif opção == "2":
-        for i, nome in enumerate(usuariso):
+        for i, nome in enumerate(usuario):
             print(f"{i + 1}. {nome}")
         indice = int(input("Digite o número do usuário que deseja atualizar: ")) - 1
-        if 0 <= indice < len(usuariso):
+        if 0 <= indice < len(usuario):
             novo_nome = input("Digite o novo nome: ")
             
-            usuariso[indice] = novo_nome
+            usuario[indice] = novo_nome
             print("Usuário atualizado com sucesso!")
         
         else:
             print("Índice inválido.")
     elif opção == "3":
         print("Cadastro concluído.")
-        for i, nome in enumerate(usuariso):
+        for i, nome in enumerate(usuario):
             print(f"{i + 1}. {nome}")
 
     elif opção == "4":
-        for i, nome in enumerate(usuariso):
+        for i, nome in enumerate(usuario):
             print(f"{i + 1}. {nome}")
         indice = int(input("Digite o número do usuário que deseja atualizar: ")) - 1
-        if 0 <= indice < len(usuariso):
+        if 0 <= indice < len(usuario):
             novo_nome = input("Digite o novo nome: ")
-            usuariso[indice] = novo_nome
+            usuario[indice] = novo_nome
             print("Usuário atualizado com sucesso!")
         
         else:
             print("Índice inválido.")
     elif opção == "5":
-        for i, nome in enumerate(usuariso):
+        for i, nome in enumerate(usuario):
             print(f"{i + 1}. {nome}")
         indice = int(input("Digite o número do usuário que deseja deletar: ")) - 1
-        if 0 <= indice < len(usuariso):
-            usuariso.pop(indice)
+        if 0 <= indice < len(usuario):
+            usuario.pop(indice)
             print("Usuário deletado com sucesso!")
         else:
             print("Índice inválido.")
 
     elif opção == "6":
         print("Usuários cadastrados:")
-        for i, nome in enumerate(usuariso):
+        for i, nome in enumerate(usuario):
             print(f"{i + 1}. {nome}")
     elif opção == "7":
 
         print("usuario sorteado")
-        escolha = random.choice(usuariso)
+        escolha = random.choice(usuario)
         print(f"usuario sorteado {escolha} ")
 
     elif opção == "8":
