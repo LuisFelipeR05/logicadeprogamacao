@@ -1,0 +1,7 @@
+frutas = ['Uva', 'Goiaba', 'Banana', 'Morango', 'Pera', 'Laranja']
+
+tupla_frutas = tuple(frutas)
+
+print('frutas armazenadas na tupla:')
+
+print(tupla_frutas)
