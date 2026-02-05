@@ -1,0 +1,26 @@
+from fastapi import FastAPI,Depends,Response
+from schemas import UsuarioIn,UsuarioOut
+from pydantic import BaseModel,EmailStr
+from db import pegar_sessao,UsuarioDB,Session,select
+
+app = FastAPI()
+
+@app.get("/usuarios",response_model=list[UsuarioOut])
+def pegar_todos_usuarios(session:Session=Depends(pegar_sessao)):
+    stmt = select(UsuarioDB)
+    resultado = session.scalars(stmt)
+    return resultado
+
+@app.get("/usuarios/{id}")
+def pegar_usuario_pelo_id (session:Session= Depends(pegar_sessao))-> UsuarioOut:
+    stmt = select(UsuarioDB).where(UsuarioDB.id == id)
+    resultado = session.scalars(stmt)
+    return resultado
+
+
+@app.post("/usuarios")
+def adicionar_novo_usuario(usuario:UsuarioIn,session:Session= Depends(pegar_sessao)):
+    usuario_db = UsuarioDB(**usuario.model_dump())
+    session.add(usuario_db)
+    session.commit()
+    return Response("Creted User",201)
